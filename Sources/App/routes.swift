@@ -18,7 +18,4 @@ public func routes(_ router: Router) throws {
         }
     }
     
-    router.get("api", "acronyms"){ req -> Future<[Acronym]> in
-        return Acronym.query(on: req).all()
-    }
 }
