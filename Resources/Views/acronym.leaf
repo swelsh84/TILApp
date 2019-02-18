@@ -3,6 +3,22 @@
      <h2>#(acronym.long)</h2>
 
      <p>Created by <a href="/users/#(user.id)/">#(user.name)</a></p>
+
+     #if(count(categories) > 0) {
+          <h3>Categories</h3>
+          <ul>
+               #for(category in categories){
+                    <li>
+                         <a href="/categories/#(category.id)">#(category.name)</a>
+                    </li>
+               }
+          </ul>
+     }
+
+     <form method="post" action="/acronyms/#(acronym.id)/delete">
+          <a href="/acronyms/#(acronym.id)/edit" class="btn btn-primary" role="button">Edit</a>&nbsp;
+          <input type="submit" class="btn btn-danger" value="Delete">
+     </form>
 }
 
 #embed("base")
