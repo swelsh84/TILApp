@@ -19,6 +19,9 @@
 
           <button type="submit" class="btn btn-primary">Log In</button>
      </form>
+     <a href="/login-google">
+          <img src="/images/sign-in-with-google.png" alt="Sign In With Google" class="mt-3">
+     </a>
 }
 
 #embed("base")

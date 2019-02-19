@@ -24,4 +24,7 @@ public func routes(_ router: Router) throws {
     
     let websiteController = WebsiteController()
     try router.register(collection: websiteController)
+    
+    let imperialController = ImperialController()
+    try router.register(collection: imperialController)
 }
