@@ -142,22 +142,6 @@ struct WebsiteController: RouteCollection {
         }
     }
     
-//    func editAcronymPostHandler(_ req: Request) throws -> Future<Response> {
-//        return try flatMap(to: Response.self, req.parameters.next(Acronym.self), req.content.decode(Acronym.self)) { acronym, data in
-//            acronym.short = data.short
-//            acronym.long = data.long
-//            acronym.userID = data.userID
-//
-//            return acronym.save(on: req).map(to: Response.self) { savedAcronym in
-//                guard let id = savedAcronym.id else {
-//                    throw Abort(.internalServerError)
-//                }
-//
-//                return req.redirect(to: "/acronyms/\(id)")
-//            }
-//        }
-//    }
-    
     func deleteAcronymHandler(_ req: Request) throws -> Future<Response> {
         return try req.parameters.next(Acronym.self).delete(on: req).transform(to: req.redirect(to: "/"))
     }
